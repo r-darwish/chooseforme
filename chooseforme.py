@@ -24,6 +24,7 @@ def main():
         print("Usage: chooseforme.py [option ...]")
         return 1
 
+    options = [s.lower() for s in options]
     options.sort()
     tweet = get_tweets("oren_haz")
     print(options[_choice(tweet, options)])
