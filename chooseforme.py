@@ -14,7 +14,7 @@ def get_tweets(user):
 
 def _choice(tweet, options):
     data = tweet + ",".join(options)
-    return adler32(data.encode("UTF-8")) % len(options)
+    return (adler32(data.encode("UTF-8")) & 0xffffffff) % len(options)
 
 
 def main():
